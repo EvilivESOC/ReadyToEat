@@ -1,0 +1,41 @@
+@model List<RegistroRest>
+<h1>Pagina de Inicio</h1>
+
+
+
+ 
+
+      <section class="jumbotron text-center">
+        <div class="container">
+          <h1 class="jumbotron-heading">Restaurantes</h1>
+          <p class="lead text-muted">Elige tus alimentos ..............con EasyToEat</p>
+          
+        </div>
+      </section>
+
+      <div class="album py-5 bg-light">
+         <div class="container">
+            <div class="row">
+                @foreach(var restaurante in Model) {
+                 <div class="col-md-4">
+                     <div class="card mb-4 shadow-sm">
+                         
+                         <div class="card-body">
+                         <p class="card-text">@restaurante.nombretienda  telefono (@restaurante.telefono) </p>
+                         <br><img class="card-img-top" src="@restaurante.imagen" height="350">
+                         <p >@restaurante.descripcion</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                 <div class="btn-group">
+                                        <button type="button" class="btn btn-sm btn-outline-secondary"><a href="~/Inicio/menuporrestaurante">Menu</a> </button>
+                                 </div>
+                                 <small class="text-muted">5 opiniones</small>
+                             </div>
+                     </div>
+                 </div>
+              </div>
+              }
+          </div>
+        </div>
+     </div>
+
+ 
